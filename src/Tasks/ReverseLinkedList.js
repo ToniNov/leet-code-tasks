@@ -33,15 +33,15 @@
  * @return {ListNode}
  */
 export var reverseList = function (head) {
-    let curent = head;
+    let current = head;
     let prev = null;
     let next = null;
 
-    while (curent !== null) {
-        next = curent.next;
-        curent.next = prev;
-        prev = curent;
-        curent = next;
+    while (current !== null) {
+        next = current.next;
+        current.next = prev;
+        prev = current;
+        current = next;
     }
 
     return prev
