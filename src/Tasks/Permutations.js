@@ -24,18 +24,23 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-export var permute = function(nums) {
+export var permute = function (nums) {
+
     const res = [];
+
     const backtrack = (path) => {
-        if(path.length === nums.length){
+        if (path.length === nums.length) {
             res.push(path);
             return;
         }
         nums.forEach(n => {
-            if(path.includes(n)){return ;}
+            if (path.includes(n)) {
+                return;
+            }
             backtrack(path.concat(n));
         });
     };
+
     backtrack([]);
     return res;
 };
